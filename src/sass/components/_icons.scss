@@ -1,0 +1,22 @@
+.icons{
+z-index: 300;
+// background-color: red;
+// padding: 8px;
+border: 1px solid rgb(105,105,105);
+-webkit-box-shadow: inset 1px -8px 9px 5px rgba(105,105,105,0.3); 
+box-shadow: inset 1px -8px 9px 5px rgba(105,105,105,0.3);
+padding: 10px;
+border-radius: 12px;
+
+svg{
+    // fill:;
+
+    width: 32px;
+    height: 32px;
+
+    font-weight: 600;
+    border-bottom: 2px solid rgb(53, 53, 53);
+position: relative;
+
+}
+}
