@@ -1,67 +1,72 @@
+.navigation{
+    // padding: 0 20px 10px;
+    background-color: white;
+    padding: 10px 20px;
+    border-radius: 16px;
+    margin :16px 40px 0 40px;
+    
+    @include flexBetween;
+&--list {
+    @include liste;
+    @include flexBetween;
+    gap: 32px;
+
+}
+&--logo{
+    @include flex;
+    gap: 10px;
+    width: fit-content;   
+}
+&--wrapper{
+    &:nth-child(1){
+        @include flexCenter;
+        gap: 60px;
+        font-size: 12px;
+    }
+    &:nth-child(2){
+        @include flexBetween;
+        gap: 12px;
+    }
+    button{
+        @include button;
+        font-size: 12px;
+        padding: 10px 20px;
+        border-radius: 12px;
+        font-family: "Inter";
+        transition: all 0.3s ease;
+        &:first-child{
+            border: 1px solid #e2e2e2;
+            background-color: transparent;
+        &:hover{
+            background-color: black;
+            color: white;
+        }
+        }
+        &:last-child{
+            background-color: black;
+            color: white;
+            border: 1px solid black;
+            &:hover{
+                background-color: white;
+                color: black;
+                border: 1px solid #e2e2e2;
+            }
+        }
+
+    }
+
+}
+}
 .header{
     font-size: 12px;
     padding: 20px 40px;
         width: 100%;
-        height: 100%;
         background-size: cover;
         background-position: center center;
         background-repeat: repeat;
         
     height: 100vh;
-    &__navigation{
-        padding: 0 20px 10px;
-        @include flexBetween;
-    &--list {
-        @include liste;
-        @include flexBetween;
-        gap: 32px;
-
-    }
-    &--logo{
-        @include flex;
-        gap: 10px;
-        width: fit-content;   
-    }
-    &--wrapper{
-        &:nth-child(1){
-            @include flexCenter;
-            gap: 60px;
-            font-size: 12px;
-        }
-        &:nth-child(2){
-            @include flexBetween;
-            gap: 12px;
-        }
-        button{
-            @include button;
-            font-size: 12px;
-            padding: 10px 20px;
-            border-radius: 12px;
-            font-family: "Inter";
-            transition: all 0.3s ease;
-            &:first-child{
-                border: 1px solid #e2e2e2;
-                background-color: transparent;
-            &:hover{
-                background-color: black;
-                color: white;
-            }
-            }
-            &:last-child{
-                background-color: black;
-                color: white;
-                border: 1px solid black;
-                &:hover{
-                    background-color: white;
-                    color: black;
-                    border: 1px solid #e2e2e2;
-                }
-            }
-
-        }
-
-    }
-    }
+   
     &__body{
       
         background: linear-gradient(to top, black, #373B44); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -113,7 +118,7 @@ overflow: hidden;
         &--dash{
             position: absolute;
             bottom: -50px;
-            width: 70%;
+            width: 80%;
             height: 40%;
             overflow: hidden;
             border-radius: 30px;
@@ -173,12 +178,12 @@ overflow: hidden;
                 transform: rotate(20deg);
             }
             &:nth-child(3){
-                left: 5%;
+                left: 2%;
                 bottom: 15%;
                 transform: rotate(-20deg);
             }
             &:nth-child(4){
-                right: 5%;
+                right: 3%;
                 bottom: 15%;
                 transform: rotate(20deg);
             }
@@ -196,4 +201,148 @@ overflow: hidden;
         }
     }
 
+}
+.trust{
+    // z-index: 900;
+    // padding: 120px 90px 30px 90px;
+    position: relative;
+    background-color: white;
+    padding: 40px 80px;
+    border-radius: 16px;
+    margin :16px 40px 0 40px;
+
+    h5{
+        color:#878787;
+        font-size: 14px;
+        font-weight: 600;
+        text-align: center;
+        margin-bottom: 26px;
+    }
+    &__team{
+        @include flexBetween;
+        &--logo{
+            width: 100px;
+            // height: 100px;
+            object-fit: contain;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            
+        }
+    }
+}
+.section{
+    background-color: white;
+    padding: 40px 80px;
+    border-radius: 16px;
+    margin :16px 40px 0 40px;
+        // padding: 30px $main-padding;
+        &__header{
+            display: flex;
+            font-size: 12px;
+            gap: 10px;
+            border:1px solid #e2e2e2;
+            width: fit-content;
+            padding: 5px;
+            box-shadow: 0 0 5px #e2e2e2;
+            border-radius: 12px;
+            margin-bottom: 14px;
+            font-weight: 500;
+            
+        }
+        &__title{
+            h1{
+                font-size: 36px;
+                font-weight: 700;
+                margin-bottom: 14px;
+            }
+            p{
+                font-size: 14px;
+                color: #878787;
+                font-weight: 500;
+            }
+        }
+        &__body{
+            margin-top: 36px;
+        }
+
+}
+.features{
+    @include flexBetween;
+    flex-wrap: wrap;
+    gap: 24px;
+    &__box{
+        flex-basis: 45%;
+    }
+    &__card{
+        border-radius: 24px;
+        padding: 14px;
+       
+        height: 250px;
+        img{
+            border-radius: 24px;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__card{
+        background: rgb(138,97,221);
+background: radial-gradient(circle, rgba(138,97,221,1) 0%, rgba(224,223,227,1) 100%);
+        // display: none;
+    }
+    &__content{
+        margin-top: 20px;
+    }
+    &__header{
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        position: relative;
+        h3{
+            font-size: 16px;
+        }
+        margin-bottom: 10px;
+     }
+     p{
+        font-size: 14px;
+        color: #878787;
+        font-weight: 500;
+     }
+    
+}
+.cards{
+    @include flexBetween;
+    gap: 24px;
+    
+    &__card{
+        img{
+            padding: 8px;
+            border-radius: 12px;
+            margin-bottom: 24px;
+        }
+        &--blue{
+            background-color: #33ceff;
+        }
+        &--green{
+            background-color: #41c5ac;
+        }
+        &--violet{
+            background-color: #5a49e8;
+        }
+        cursor: pointer;
+
+        padding: 18px;
+        border: 1px solid #e2e2e2;
+        border-radius: 18px;
+        h3{
+            font-size: 16px;
+        }
+        p{
+            margin-top: 8px;
+            font-size: 14px;
+            color: #878787;
+        }
+    }
 }

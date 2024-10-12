@@ -34,6 +34,7 @@
 body {
     box-sizing: border-box;
     font-family: "Inter";
+    background-color: #f6f8fa;
 
 
     @include respond(phone) {
