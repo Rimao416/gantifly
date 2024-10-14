@@ -1,5 +1,6 @@
 // import React from 'react'
 import Logo from "../assets/logo.png";
+
 // import { FaFolderOpen } from "react-icons/fa6";
 import Icons from "../components/Icons";
 import Calendar from "../assets/calendar.png";
@@ -25,7 +26,7 @@ import {
   pricingData,
   TestimonialData,
 } from "../constants/data";
-// import Footer from "../components/Footer";
+import Footer from "../components/Footer";
 
 // CARDS
 import { FaStar, FaRegStar } from 'react-icons/fa';
@@ -283,7 +284,7 @@ function Home() {
           <button>Comment ça marche</button>
         </div>
       </section>
-      {/* <Footer/> */}
+      <Footer/>
     </div>
   );
 }

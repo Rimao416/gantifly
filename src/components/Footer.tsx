@@ -1,9 +1,20 @@
-import React from 'react';
-import { FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
-
+import React from "react";
+import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
+import LogoWhite from "../assets/logo_white.png";
 const Footer: React.FC = () => {
   return (
     <footer className="footer">
+      <div className="footer__header">
+        <div className="footer__wrapper">
+          <img src={LogoWhite} alt={LogoWhite} />
+          <p>Gantifly</p>
+        </div>
+        <div className="footer__social">
+          <FaFacebook className="footer__icon" />
+          <FaTwitter className="footer__icon" />
+          <FaInstagram className="footer__icon" />
+        </div>
+      </div>
       <div className="footer__container">
         <div className="footer__column">
           <h3 className="footer__title">Gantlify</h3>
@@ -62,20 +73,12 @@ const Footer: React.FC = () => {
             <li className="footer__item">Partnerships</li>
           </ul>
         </div>
-
-        <div className="footer__social">
-          <FaFacebook className="footer__icon" />
-          <FaTwitter className="footer__icon" />
-          <FaInstagram className="footer__icon" />
-        </div>
       </div>
 
       <div className="footer__bottom">
-        <select className="footer__language">
-          <option>United States</option>
-        </select>
+        <p className="footer__copyright">By Kayumba Omari Omari, Design By Someone Else</p>
         <p className="footer__copyright">
-          © Gantlify 2024. All Rights Reserved.
+          © Gantlify {new Date().getFullYear()} All Rights Reserved.
         </p>
       </div>
     </footer>

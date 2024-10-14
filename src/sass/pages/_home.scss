@@ -577,18 +577,63 @@ display: flex;
 //   BETTER SECTION
 .better{
     margin: 16px 40px 0 40px;
-    background-color: black;
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,1) 35%, rgba(11,83,100,1) 100%);
     color: white;
-    padding: 20px 0;
+    padding: 80px 0;
+    border-radius: 16px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    position: relative;
+    z-index: 500;
+    &::before{
+        @include absolute;
+        background: url("https://finflow.uicore.co/cryptocurrency-trading/wp-content/plugins/uicore-framework/assets/img/noise.webp")
+          repeat;
+        opacity: 0.1; /* Ajustez l'opacité selon vos préférences */
+        // z-index: -1; /* Positionne le pseudo-élément derrière le contenu de la carte */
+        border-radius: inherit; /* S'assure que le pseudo-élément suit les coins arrondis de la carte */
+        z-index: 1;
+    }
     h1{
         font-size: 36px;
         font-weight: 700;
         text-align: center;
+        width: 35%;
+        z-index: 400;
+        
     }
     p{
+        z-index: 400;
         font-size: 14px;
         text-align: center;
         color: #878787;
+        width: 50%;
         // width: 40%;
+    }
+    &__button{
+        z-index: 400;
+        display: flex;
+        gap: 16px;
+        button{
+            @include button;
+            padding: 6px;
+            border-radius: 12px;
+            font-family: "Inter";
+            transition: all 0.3s ease;
+            font-weight: 600;
+            width: 100%;
+            &:first-child{
+                background-color: white;
+                color: black;
+            }
+            &:last-child{
+                background-color: rgb(177, 177, 177,.3);
+                color: white;
+            }
+        }
     }
 }
