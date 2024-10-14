@@ -277,8 +277,8 @@ function Home() {
         </div>
       </section>
       <section className="better">
-        <h1>A Better Way To Work Today, Togeher</h1>
-        <p>Gantfly enables you to achieve clarity and significant results on a large scale by linking tasks and workflows to the Oberaching objectives of the company</p>
+        <h1>Une meilleure façon de travailler aujourd'hui, ensemble</h1>
+        <p>Gantfly vous permet d'obtenir de la clarté et des résultats significatifs à grande échelle en reliant les tâches et les flux de travail aux objectifs d'ensemble de l'entreprise.</p>
         <div className="better__button">
           <button>Commencer</button>
           <button>Comment ça marche</button>
