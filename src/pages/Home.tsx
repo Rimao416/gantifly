@@ -3,13 +3,14 @@ import Logo from "../assets/logo.png";
 // import { FaFolderOpen } from "react-icons/fa6";
 import Icons from "../components/Icons";
 import Calendar from "../assets/calendar.png";
-
+import { FaCheck } from "react-icons/fa6";
 import Folder from "../assets/folder.png";
 import Menu from "../assets/le-menu.png";
 import Image from "../assets/image.png";
 import Sablier from "../assets/sablier.png";
 import Prix from "../assets/prix.png";
 import Dash from "../assets/dash.png";
+import Pricing from "../assets/price.png";
 // MY TRUST
 import Mail from "../assets/mail.png";
 import Medium from "../assets/medium.png";
@@ -17,7 +18,7 @@ import Microsoft from "../assets/microsoft.png";
 import Ever from "../assets/ever.png";
 import Drop from "../assets/drop.png";
 import Section from "../layouts/Section";
-import { CardData, FeaturesData } from "../constants/data";
+import { CardData, FeaturesData, pricingData } from "../constants/data";
 
 // CARDS
 
@@ -148,13 +149,80 @@ function Home() {
         <div className="cards">
           {CardData.map((item, index) => (
             <div className="cards__card" key={index}>
-              <img src={item.logo} alt={item.logo} className={`cards__card--${item.color}`} />
+              <img
+                src={item.logo}
+                alt={item.logo}
+                className={`cards__card--${item.color}`}
+              />
               <h3>{item.title}</h3>
               <p>{item.description}</p>
             </div>
           ))}
         </div>
       </Section>
+      <section className="pricing">
+        <div className="pricing__header">
+          <img src={Pricing} alt={Pricing} />
+          <p>Tarification</p>
+        </div>
+        <div className="pricing__presentation">
+          <div className="pricing__wrapper">
+            <h1 className="pricing__title">
+              Une tarification simple et flexible
+            </h1>
+          </div>
+          <div className="pricing__wrapper">
+            <p>Mensuel</p>
+            <p>Annuel</p>
+          </div>
+        </div>
+        <div className="pricing__body">
+          {pricingData.map((item, index) => (
+            <div
+              className={
+                index === 1
+                  ? "pricing__card pricing__card--active"
+                  : "pricing__card"
+              }
+              key={index}
+            >
+              <div className="pricing__up">
+                <p className="pricing__type">{item.title}</p>
+                <p className="pricing__price">
+                  <span style={{ color: index === 1 ? "black" : "white" }}>
+                    {item.price}
+                  </span>{" "}
+                  par mois
+                </p>
+                <p>{item.description}</p>
+              </div>
+              <div className="pricing__middle">
+                <p
+                  className="pricing__middle--header"
+                  style={{ color: index === 1 ? "black" : "white" }}
+                >
+                  Ce plan inclut:{" "}
+                </p>
+                <div className="pricing__list">
+        
+        {item.plans.map((plan, index) => (
+          <div key={`${index}-${index}`} className="pricing__item">
+            <span 
+              className={`pricing__item ${item.title === "Pro" ? "pricing__item--active" : ""}`}
+            >
+              <FaCheck />
+            </span>
+            <p>{plan}</p>
+          </div>
+        ))}
+    </div>
+              </div>
+              
+              <button className={`pricing__button ${index === 1 ? "pricing__button--active" : ""}`}>Choisir</button>
+            </div>
+          ))}
+        </div>
+      </section>
     </div>
   );
 }

@@ -4,10 +4,8 @@ import Box_1 from "../assets/box_1.jpg";
 import Box_2 from "../assets/box_2.png";
 // CARDS
 import Equipe from "../assets/equipe.png";
-import Energie from "../assets/energie.png"
-import Parametres from "../assets/parametres.png"
-
-
+import Energie from "../assets/energie.png";
+import Parametres from "../assets/parametres.png";
 
 interface FeaturesProps {
   title: string;
@@ -74,6 +72,54 @@ export const CardData: CardProps[] = [
       "Rationalisez votre flux de travail en automatisant les tâches répétitives. Nos solutions vous aident à mettre en place des processus automatiques",
     logo: Parametres,
     color: "green",
+  },
+];
 
-  }
+interface pricingProps {
+  title: string;
+  price: string;
+  description: string;
+  features: string;
+  plans: string[];
+}
+export const pricingData: pricingProps[] = [
+  {
+    title: "Essentiel",
+    price: "19€",
+    description:
+      "Idéal pour les petites équipes qui veulent organiser leur travail efficacement.",
+    features: "Accès aux fonctionnalités de base, collaboration simplifiée",
+    plans: [
+      "Gestion de projets basique",
+      "5 utilisateurs",
+      "Support par email",
+      "Stockage de 10 Go",
+    ],
+  },
+  {
+    title: "Pro",
+    price: "49€",
+    description:
+      "Parfait pour les équipes de taille moyenne nécessitant plus de contrôle et de visibilité.",
+    features: "Fonctionnalités avancées avec automatisation",
+    plans: [
+      "10 utilisateurs",
+      "Support prioritaire",
+      "Intégration avec d'autres services",
+      "Stockage de 100 Go",
+    ],
+  },
+  {
+    title: "Entreprise",
+    price: "99€",
+    description:
+      "Conçu pour les grandes entreprises avec des besoins complexes et un contrôle total.",
+    features: "Fonctionnalités complètes avec personnalisation avancée",
+    plans: [
+      "Utilisateurs illimités",
+      "Gestion avancée des permissions",
+      "Support dédié 24/7",
+      "Stockage illimité",
+    ],
+  },
 ];
