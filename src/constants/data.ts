@@ -7,6 +7,13 @@ import Equipe from "../assets/equipe.png";
 import Energie from "../assets/energie.png";
 import Parametres from "../assets/parametres.png";
 
+import Temoignage_1 from "../assets/Temoignage_1.jpg";
+import Temoignage_2 from "../assets/Temoignage_2.jpg";
+import Temoignage_3 from "../assets/Temoignage_3.jpg";
+import Temoignage_4 from "../assets/Temoignage_4.jpg";
+import Temoignage_5 from "../assets/Temoignage_5.jpg";
+import Temoignage_6 from "../assets/Temoignage_6.jpg";
+
 interface FeaturesProps {
   title: string;
   thumbnail: string;
@@ -121,5 +128,64 @@ export const pricingData: pricingProps[] = [
       "Support dédié 24/7",
       "Stockage illimité",
     ],
+  },
+];
+
+export interface TestimonialProps {
+  name: string;
+  role: string;
+  image: string;
+  description: string;
+  rating: number;
+}
+
+export const TestimonialData: TestimonialProps[] = [
+  {
+    name: "Alice Dupont",
+    role: "Chef de projet",
+    image: Temoignage_1,
+    description:
+      "Gantifly a transformé la manière dont notre équipe gère les projets. Nous avons réduit notre temps de planification de 30% !",
+    rating: 5,
+  },
+  {
+    name: "Marc Leroux",
+    role: "Responsable Marketing",
+    image: Temoignage_2,
+    description:
+      "Avec Gantifly, notre équipe reste alignée et productive. La gestion des tâches n'a jamais été aussi fluide.",
+    rating: 4,
+  },
+  {
+    name: "Sophie Martin",
+    role: "Développeuse Full Stack",
+    image: Temoignage_3,
+    description:
+      "L'intégration avec nos outils de développement est impeccable. Une solution parfaite pour les équipes techniques.",
+    rating: 5,
+  },
+  {
+    name: "Ahmed Belaid",
+    role: "Product Owner",
+    image: Temoignage_4,
+    description:
+      "Le suivi des sprints et la visibilité sur les tâches sont incroyables. Gantifly est devenu un outil indispensable.",
+    rating: 4,
+  },
+  {
+    name: "Claire Fournier",
+    role: "Coach Agile",
+    image: Temoignage_5,
+    description:
+      "Gantifly favorise une collaboration efficace entre toutes les parties prenantes, en restant fidèle aux principes Agile.",
+    rating: 5,
+  },
+  {
+    name: "Paul Roux",
+    role: "Directeur Général",
+    image: Temoignage_6,
+    description:
+      "Nous avons vu une amélioration immédiate de notre productivité et de la satisfaction de nos clients grâce à Gantifly.",
+    rating: 5,
   },
 ];

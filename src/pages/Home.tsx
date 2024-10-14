@@ -17,12 +17,28 @@ import Medium from "../assets/medium.png";
 import Microsoft from "../assets/microsoft.png";
 import Ever from "../assets/ever.png";
 import Drop from "../assets/drop.png";
+import Customer from "../assets/customer.png";
 import Section from "../layouts/Section";
-import { CardData, FeaturesData, pricingData } from "../constants/data";
+import {
+  CardData,
+  FeaturesData,
+  pricingData,
+  TestimonialData,
+} from "../constants/data";
+// import Footer from "../components/Footer";
 
 // CARDS
-
+import { FaStar, FaRegStar } from 'react-icons/fa';
 function Home() {
+  const renderStars = (rating: number) => {
+    return [...Array(5)].map((_, i) => {
+      return i < rating ? (
+        <FaStar key={i} className="star star--filled" />
+      ) : (
+        <FaRegStar key={i} className="star star--empty" />
+      );
+    });
+  };
   interface NavMenu {
     name: string;
     link: string;
@@ -204,25 +220,70 @@ function Home() {
                   Ce plan inclut:{" "}
                 </p>
                 <div className="pricing__list">
-        
-        {item.plans.map((plan, index) => (
-          <div key={`${index}-${index}`} className="pricing__item">
-            <span 
-              className={`pricing__item ${item.title === "Pro" ? "pricing__item--active" : ""}`}
-            >
-              <FaCheck />
-            </span>
-            <p>{plan}</p>
-          </div>
-        ))}
-    </div>
+                  {item.plans.map((plan, index) => (
+                    <div key={`${index}-${index}`} className="pricing__item">
+                      <span
+                        className={`pricing__item ${
+                          item.title === "Pro" ? "pricing__item--active" : ""
+                        }`}
+                      >
+                        <FaCheck />
+                      </span>
+                      <p>{plan}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
-              
-              <button className={`pricing__button ${index === 1 ? "pricing__button--active" : ""}`}>Choisir</button>
+
+              <button
+                className={`pricing__button ${
+                  index === 1 ? "pricing__button--active" : ""
+                }`}
+              >
+                Choisir
+              </button>
             </div>
           ))}
         </div>
       </section>
+      <section className="testimonial">
+        <div className="testimonial__header">
+          <div className="testimonial__main">
+            <img src={Customer} alt="Customer" />
+            Clients
+          </div>
+          <h1>Ce que Nos Clients disent sur nous</h1>
+          <p>Here's what some of our customers say about platform</p>
+        </div>
+        <div className="testimonial__body">
+          {TestimonialData.map((testimonial, index) => (
+            <div className="testimonial__card" key={index}>
+              <div className="testimonial__rating">{renderStars(testimonial.rating)}
+                <span>{testimonial.rating}</span>
+              </div>
+              <p className="testimonial__description">
+                {testimonial.description}
+              </p>
+              <div className="testimonial__authors">
+                <img src={testimonial.image} alt={testimonial.image} />
+                <div className="testimonial__person">
+                  <p>{testimonial.name}</p>
+                  <p>{testimonial.role}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section className="better">
+        <h1>A Better Way To Work Today, Togeher</h1>
+        <p>Gantfly enables you to achieve clarity and significant results on a large scale by linking tasks and workflows to the Oberaching objectives of the company</p>
+        <div className="better__button">
+          <button>Commencer</button>
+          <button>Comment ça marche</button>
+        </div>
+      </section>
+      {/* <Footer/> */}
     </div>
   );
 }
