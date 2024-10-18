@@ -3,7 +3,7 @@ import Logo from "../assets/logo.png";
 
 // import { FaFolderOpen } from "react-icons/fa6";
 import Icons from "../components/Icons";
-import { FiMenu } from "react-icons/fi";
+import { FiMenu, FiX } from 'react-icons/fi'; // Menu et Close icons
 import Calendar from "../assets/calendar.png";
 import { FaCheck } from "react-icons/fa6";
 import Folder from "../assets/folder.png";
@@ -31,7 +31,11 @@ import Footer from "../components/Footer";
 
 // CARDS
 import { FaStar, FaRegStar } from 'react-icons/fa';
+import { useState } from "react";
 function Home() {
+  const [isOpen, setIsOpen] = useState(false); // État du menu burger
+
+  const toggleMenu = () => setIsOpen(!isOpen); // Fonction pour basculer le menu
   const renderStars = (rating: number) => {
     return [...Array(5)].map((_, i) => {
       return i < rating ? (
@@ -71,7 +75,7 @@ function Home() {
   const TrustList = [Ever, Drop, Mail, Medium, Microsoft];
   return (
     <div className="app">
-      <section className="navigation">
+      <section className={`navigation ${isOpen ? 'open' : ''}`}>
         <div className="navigation--wrapper">
           <div className="navigation--logo">
             <img src={Logo} alt="logo" />
@@ -89,10 +93,10 @@ function Home() {
           <button>Connexion</button>
           <button>Démarrer</button>
         </div>
-        <span className="navigation--toggle">
-        <FiMenu />
-        </span>
-        <div className="navigation__dropdown">
+        <span className="navigation--toggle" onClick={toggleMenu}>
+        {isOpen ? <FiX /> : <FiMenu />} {/* Icône changeante */}
+      </span>
+      <div className={`navigation__dropdown ${isOpen ? 'show' : ''}`}>
           <ul className="navigation__dropdown--list">
             {navMenuList.map((item) => (
               <li key={item.name}>
@@ -100,6 +104,10 @@ function Home() {
               </li>
             ))}
             </ul>
+            <div className="navigation__dropdown--button">
+               <button>Connexion</button>
+          <button>Démarrer</button>
+            </div>
         </div>
       </section>
       <section className="header">

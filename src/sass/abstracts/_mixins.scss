@@ -52,6 +52,35 @@
       @media (min-width: 1024px) { @content; }
     }
   }
+  @mixin wrapperButton{
+    button{
+      @include button;
+      font-size: 12px;
+      padding: 10px 20px;
+      border-radius: 12px;
+      font-family: "Inter";
+      transition: all 0.3s ease;
+      &:first-child{
+          border: 1px solid #e2e2e2;
+          background-color: transparent;
+      &:hover{
+          background-color: black;
+          color: white;
+      }
+      }
+      &:last-child{
+          background-color: black;
+          color: white;
+          border: 1px solid black;
+          &:hover{
+              background-color: white;
+              color: black;
+              border: 1px solid #e2e2e2;
+          }
+      }
+
+  }
+  }
 
   @mixin visuallyHidden {
     position: absolute;
