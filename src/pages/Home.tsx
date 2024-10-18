@@ -151,7 +151,7 @@ function Home() {
         <Swiper
           slidesPerView={5}
           spaceBetween={30}
-          effect={"slide"}
+          // effect={"slide"}
           speed={2000}
           breakpoints={{
             0: {

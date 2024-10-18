@@ -8,10 +8,15 @@
     flex-direction: column;
     gap: 30px;
     font-size: 14px !important;
+    @include responsive('mobile'){
+        margin :16px 20px 0 20px;
+        padding: 20px;
+    }
     &__wrapper{
         display: flex;
         align-items: center;
         gap: 12px;
+        
         }
     &__header{
         @include flexBetween;
@@ -22,6 +27,9 @@
       display: grid;
       grid-template-columns: repeat(5, 1fr);
       gap: 20px;
+      @include responsive('mobile'){
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
   
     &__column {
