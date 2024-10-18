@@ -3,7 +3,7 @@ import Logo from "../assets/logo.png";
 
 // import { FaFolderOpen } from "react-icons/fa6";
 import Icons from "../components/Icons";
-import { FiMenu, FiX } from 'react-icons/fi'; // Menu et Close icons
+import { FiMenu, FiX } from "react-icons/fi"; // Menu et Close icons
 import Calendar from "../assets/calendar.png";
 import { FaCheck } from "react-icons/fa6";
 import Folder from "../assets/folder.png";
@@ -29,8 +29,14 @@ import {
 } from "../constants/data";
 import Footer from "../components/Footer";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import { Autoplay } from "swiper/modules";
+
 // CARDS
-import { FaStar, FaRegStar } from 'react-icons/fa';
+import { FaStar, FaRegStar } from "react-icons/fa";
 import { useState } from "react";
 function Home() {
   const [isOpen, setIsOpen] = useState(false); // État du menu burger
@@ -75,7 +81,7 @@ function Home() {
   const TrustList = [Ever, Drop, Mail, Medium, Microsoft];
   return (
     <div className="app">
-      <section className={`navigation ${isOpen ? 'open' : ''}`}>
+      <section className={`navigation ${isOpen ? "open" : ""}`}>
         <div className="navigation--wrapper">
           <div className="navigation--logo">
             <img src={Logo} alt="logo" />
@@ -94,20 +100,20 @@ function Home() {
           <button>Démarrer</button>
         </div>
         <span className="navigation--toggle" onClick={toggleMenu}>
-        {isOpen ? <FiX /> : <FiMenu />} {/* Icône changeante */}
-      </span>
-      <div className={`navigation__dropdown ${isOpen ? 'show' : ''}`}>
+          {isOpen ? <FiX /> : <FiMenu />} {/* Icône changeante */}
+        </span>
+        <div className={`navigation__dropdown ${isOpen ? "show" : ""}`}>
           <ul className="navigation__dropdown--list">
             {navMenuList.map((item) => (
               <li key={item.name}>
                 <a href={item.link}>{item.name}</a>
               </li>
             ))}
-            </ul>
-            <div className="navigation__dropdown--button">
-               <button>Connexion</button>
-          <button>Démarrer</button>
-            </div>
+          </ul>
+          <div className="navigation__dropdown--button">
+            <button>Connexion</button>
+            <button>Démarrer</button>
+          </div>
         </div>
       </section>
       <section className="header">
@@ -142,16 +148,53 @@ function Home() {
       </section>
       <section className="trust">
         <h5>La confiance de 2 millions d'équipes et plus</h5>
-        <div className="trust__team">
+        <Swiper
+          slidesPerView={5}
+          spaceBetween={30}
+          effect={"slide"}
+          speed={2000}
+          breakpoints={{
+            0: {
+              slidesPerView: 1,
+            },
+            640: {
+              slidesPerView: 2,
+            },
+            768: {
+              slidesPerView: 3,
+            },
+            1024: {
+              slidesPerView: 4,
+            },
+            1280: {
+              slidesPerView: 5,
+            },
+            
+          }}
+
+          autoplay={{
+            delay: 1000,
+            pauseOnMouseEnter: true,
+            disableOnInteraction: false,
+            stopOnLastSlide: true,
+            // disableOnInteraction: false,
+
+          }}
+          loop={true}
+          modules={[Autoplay]}
+          className="trust__team"
+        >
           {TrustList.map((item) => (
-            <img
-              src={item}
-              alt={item}
-              key={item}
-              className="trust__team--logo"
-            />
+            <SwiperSlide>
+              <img
+                src={item}
+                alt={item}
+                key={item}
+                className="trust__team--logo"
+              />
+            </SwiperSlide>
           ))}
-        </div>
+        </Swiper>
       </section>
       <Section
         description="La flexibilité exceptionnelle de Gantifly permet de réaliser tous les types de travaux. Et nous ne cessons jamais d'innover"
@@ -280,7 +323,8 @@ function Home() {
         <div className="testimonial__body">
           {TestimonialData.map((testimonial, index) => (
             <div className="testimonial__card" key={index}>
-              <div className="testimonial__rating">{renderStars(testimonial.rating)}
+              <div className="testimonial__rating">
+                {renderStars(testimonial.rating)}
                 <span>{testimonial.rating}</span>
               </div>
               <p className="testimonial__description">
@@ -299,13 +343,17 @@ function Home() {
       </section>
       <section className="better">
         <h1>Une meilleure façon de travailler aujourd'hui, ensemble</h1>
-        <p>Gantfly vous permet d'obtenir de la clarté et des résultats significatifs à grande échelle en reliant les tâches et les flux de travail aux objectifs d'ensemble de l'entreprise.</p>
+        <p>
+          Gantfly vous permet d'obtenir de la clarté et des résultats
+          significatifs à grande échelle en reliant les tâches et les flux de
+          travail aux objectifs d'ensemble de l'entreprise.
+        </p>
         <div className="better__button">
           <button>Commencer</button>
           <button>Comment ça marche</button>
         </div>
       </section>
-      <Footer/>
+      <Footer />
     </div>
   );
 }

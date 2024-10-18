@@ -108,12 +108,19 @@
 .header{
     font-size: 12px;
     padding: 20px 40px;
+    @include responsive('mobile'){
+        padding: 20px;
+    }
+
         width: 100%;
         background-size: cover;
         background-position: center center;
         background-repeat: repeat;
         
     height: 100vh;
+    @include responsive('mobile'){
+        height: 100%;
+    }
    
     &__body{
       
@@ -150,6 +157,11 @@ overflow: hidden;
         &--title{
             color: rgb(240, 240, 240);
             font-size: 56px;
+            @include responsive('mobile'){
+                font-size: 30px;
+                width: 90%;
+                line-height: 1;
+            }
             font-weight: 700;
             line-height: 52px;
             text-align: center;
@@ -162,6 +174,9 @@ overflow: hidden;
             // line-height: 26px;
             text-align: center;
             width: 50%;
+            @include responsive('mobile'){
+                width: 80%;
+            }
         }
         &--dash{
             position: absolute;
@@ -173,6 +188,10 @@ overflow: hidden;
             background-color: rgba(53, 53, 53, 0.5);
             object-fit: cover;
             padding: 10px;
+            @include responsive('mobile'){
+                // width: 100%;
+                display: none;
+            }
         }
 
 
@@ -180,6 +199,11 @@ overflow: hidden;
     &__button{
         @include flexCenter;
         gap: 28px;
+        @include responsive('mobile'){
+            flex-direction: column;
+            width: 100% !important;
+            gap: 14px;
+        }
         button{
             @include button;
             padding: 10px;
@@ -187,6 +211,9 @@ overflow: hidden;
             font-family: "Inter";
             transition: all 0.3s ease;
             font-weight: 600;
+            @include responsive('mobile'){
+                width: 80% !important;
+            }
             
             &:first-child{
                 background-color: white;
@@ -258,6 +285,10 @@ overflow: hidden;
     padding: 40px 80px;
     border-radius: 16px;
     margin :16px 40px 0 40px;
+    @include responsive('mobile'){
+        padding: 20px;
+        margin :16px 20px 0 20px;
+    }
 
     h5{
         color:#878787;
