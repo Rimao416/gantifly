@@ -169,7 +169,7 @@ function Home() {
             1280: {
               slidesPerView: 5,
             },
-            
+
           }}
 
           autoplay={{
