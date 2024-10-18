@@ -3,6 +3,7 @@ import Logo from "../assets/logo.png";
 
 // import { FaFolderOpen } from "react-icons/fa6";
 import Icons from "../components/Icons";
+import { FiMenu } from "react-icons/fi";
 import Calendar from "../assets/calendar.png";
 import { FaCheck } from "react-icons/fa6";
 import Folder from "../assets/folder.png";
@@ -87,6 +88,18 @@ function Home() {
         <div className="navigation--wrapper">
           <button>Connexion</button>
           <button>Démarrer</button>
+        </div>
+        <span className="navigation--toggle">
+        <FiMenu />
+        </span>
+        <div className="navigation__dropdown">
+          <ul className="navigation__dropdown--list">
+            {navMenuList.map((item) => (
+              <li key={item.name}>
+                <a href={item.link}>{item.name}</a>
+              </li>
+            ))}
+            </ul>
         </div>
       </section>
       <section className="header">
